@@ -41,7 +41,7 @@ const Question = (props) => {
     const handleQuit = () => {
         setCurrentQuestion(0);
         setQuestions();
-        navigate("/quizzes-app");
+        window.location.reload();
     }
 
 
