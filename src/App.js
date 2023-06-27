@@ -1,11 +1,13 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import QuizzSettings from './pages/QuizzSettings';
-import QuizzQuestions from './pages/QuizzQuestions';
-import FinalView from './pages/FinalView';
+import { Routes, Route } from 'react-router-dom';
+import QuizzSettings from './routes/QuizzSettings';
+import QuizzQuestions from './routes/QuizzQuestions';
+import FinalView from './routes/FinalView';
 import { Box, Container } from '@mui/material';
 import axios from 'axios';
 import { useState } from 'react';
 import useAxios from './hooks/useAxios';
+import Navbar from './components/Navbar';
+
 
 
 function App() {
@@ -23,9 +25,9 @@ function App() {
 
 
   return (
-    <BrowserRouter>
       <Container maxWidth="sm">
         <Box textAlign="center" mt={5}>
+          {/* <Navbar /> */}
           <Routes>
             <Route path="/" element={<QuizzSettings fetchQuestions={fetchQuestions} response={response} loading={loading} error={error} />} exact />
             <Route path="/quizzquestions" element={<QuizzQuestions questions={questions} setQuestions={setQuestions} score={score} setScore={setScore} />} />
@@ -33,7 +35,6 @@ function App() {
           </Routes>
         </Box>
       </Container>
-    </BrowserRouter>
   );
 }
 
