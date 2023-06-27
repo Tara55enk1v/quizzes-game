@@ -41,7 +41,7 @@ const Question = (props) => {
     const handleQuit = () => {
         setCurrentQuestion(0);
         setQuestions();
-        navigate(-1);
+        navigate("/");
     }
 
 
@@ -74,7 +74,6 @@ const Question = (props) => {
                         variant="contained"
                         color="error"
                         size="large"
-                        href="/"
                         onClick={handleQuit}
                     >
                         Quit
