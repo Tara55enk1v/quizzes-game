@@ -3,11 +3,12 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const FinalView = (props) => {
-    const { score } = props;
+    const { score, setScore } = props;
     const total_quizz_time = useSelector((state) => state.total_quizz_time);
     const navigate = useNavigate();
 
     const handleClick = () => {
+        setScore(0);
         navigate("/");
     }
 
