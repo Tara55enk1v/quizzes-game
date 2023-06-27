@@ -27,9 +27,8 @@ function App() {
   return (
       <Container maxWidth="sm">
         <Box textAlign="center" mt={5}>
-          {/* <Navbar /> */}
           <Routes>
-            <Route path="/" element={<QuizzSettings fetchQuestions={fetchQuestions} response={response} loading={loading} error={error} />} exact />
+            <Route path="/quizzsettings" element={<QuizzSettings fetchQuestions={fetchQuestions} response={response} loading={loading} error={error} />} exact />
             <Route path="/quizzquestions" element={<QuizzQuestions questions={questions} setQuestions={setQuestions} score={score} setScore={setScore} />} />
             <Route path="/finalview" element={<FinalView score={score}/>}/>
           </Routes>

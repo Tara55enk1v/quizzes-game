@@ -27,7 +27,7 @@ const FinalView = (props) => {
                 color="secondary"
                 size="large"
                 style={{ alignSelf: "center", marginTop: 20 }}
-                href="/"
+                href="/quizzsettings"
             >
                 Go to homepage
             </Button>
