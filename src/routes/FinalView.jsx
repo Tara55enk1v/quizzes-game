@@ -1,10 +1,15 @@
 import { Button, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const FinalView = (props) => {
     const { score } = props;
     const total_quizz_time = useSelector((state) => state.total_quizz_time);
+    const navigate = useNavigate();
 
+    const handleClick = () => {
+        navigate("/");
+    }
 
     return (
         <div className="result">
@@ -27,7 +32,7 @@ const FinalView = (props) => {
                 color="secondary"
                 size="large"
                 style={{ alignSelf: "center", marginTop: 20 }}
-                href="/quizzsettings"
+                onClick={handleClick}
             >
                 Go to homepage
             </Button>
