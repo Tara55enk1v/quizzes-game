@@ -39,9 +39,9 @@ const Question = (props) => {
     }
 
     const handleQuit = () => {
-        setCurrentQuestion(0);
-        setQuestions();
-        navigate("/#/");
+        // setCurrentQuestion(0);
+        // setQuestions();
+        navigate("/");
     }
 
 

@@ -6,8 +6,6 @@ import { Box, Container } from '@mui/material';
 import axios from 'axios';
 import { useState } from 'react';
 import useAxios from './hooks/useAxios';
-import Navbar from './components/Navbar';
-
 
 
 function App() {
