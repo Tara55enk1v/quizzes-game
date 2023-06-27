@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
-import QuizzSettings from './routes/QuizzSettings';
-import QuizzQuestions from './routes/QuizzQuestions';
+import QuizSettings from './routes/QuizSettings';
+import QuizQuestions from './routes/QuizQuestions';
 import FinalView from './routes/FinalView';
 import { Box, Container } from '@mui/material';
 import axios from 'axios';
@@ -26,8 +26,8 @@ function App() {
       <Container maxWidth="sm">
         <Box textAlign="center" mt={5}>
           <Routes>
-            <Route path="/" element={<QuizzSettings fetchQuestions={fetchQuestions} response={response} loading={loading} error={error} />} exact />
-            <Route path="/quizzquestions" element={<QuizzQuestions questions={questions} setQuestions={setQuestions} score={score} setScore={setScore} />} />
+            <Route path="/" element={<QuizSettings fetchQuestions={fetchQuestions} response={response} loading={loading} error={error} />} exact />
+            <Route path="/quizquestions" element={<QuizQuestions questions={questions} setQuestions={setQuestions} score={score} setScore={setScore} />} />
             <Route path="/finalview" element={<FinalView score={score} setScore={setScore} />}/>
           </Routes>
         </Box>

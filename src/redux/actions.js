@@ -1,7 +1,7 @@
 import {
     CHANGE_CATEGORY,
-    TOTAL_QUIZZ_TIME,
-    START_QUIZZ_TIMER,
+    TOTAL_QUIZ_TIME,
+    START_QUIZ_TIMER,
   } from "./actionTypes";
   
 export const handleCategoryChange = (payload) => ({
@@ -9,13 +9,13 @@ export const handleCategoryChange = (payload) => ({
   payload,
 });
 
-export const setTotalQuizzTime = (payload) => ({
-  type: TOTAL_QUIZZ_TIME,
+export const setTotalQuizTime = (payload) => ({
+  type: TOTAL_QUIZ_TIME,
   payload,
 });
 
-export const setStartQuizzTimer = (payload) => ({
-  type: START_QUIZZ_TIMER,
+export const setStartQuizTimer = (payload) => ({
+  type: START_QUIZ_TIMER,
   payload,
 });
   

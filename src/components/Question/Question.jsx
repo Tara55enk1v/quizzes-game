@@ -4,7 +4,7 @@ import "./Question.css";
 import { useNavigate } from "react-router-dom";
 import { decode } from "html-entities";
 import { useDispatch } from "react-redux";
-import { setStartQuizzTimer } from "../../redux/actions";
+import { setStartQuizTimer } from "../../redux/actions";
 
 const Question = (props) => {
     const [selected, setSelected] = useState();
@@ -28,7 +28,7 @@ const Question = (props) => {
 
     const handleNext = () => {
         if (currentQuestion > 8) {
-            dispatch(setStartQuizzTimer(false));
+            dispatch(setStartQuizTimer(false));
             navigate("/finalview");
         }
         else if (selected) {

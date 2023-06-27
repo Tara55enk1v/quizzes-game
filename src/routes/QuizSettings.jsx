@@ -1,12 +1,12 @@
 import { Box, Button, CircularProgress, Typography } from "@mui/material"
-import SelectQuizzOption from "../components/SelectQuizzOption"
+import SelectQuizOption from "../components/SelectQuizOption"
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { setStartQuizzTimer } from "../redux/actions";
-import logo from "../images/quizz.png"
+import { setStartQuizTimer } from "../redux/actions";
+import logo from "../images/quiz.png"
 
-const QuizzSettings = (props) => {
+const QuizSettings = (props) => {
     const { fetchQuestions, response, loading, error } = props;
     const [isStartBtnDisabled, setIsStartBtnDisabled] = useState(true);
     const [isStartRandomBtnDisabled, setIsStartRandomBtnDisabled] = useState(false);
@@ -14,18 +14,18 @@ const QuizzSettings = (props) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const handleStartQuizzByTheCategory = (e) => {
+    const handleStartQuizByTheCategory = (e) => {
         e.preventDefault();
         fetchQuestions(question_category);
-        dispatch(setStartQuizzTimer(true));
-        navigate("/quizzquestions");
+        dispatch(setStartQuizTimer(true));
+        navigate("/quizquestions");
     }
 
-    const handleStartRandomQuizz = (e) => {
+    const handleStartRandomQuiz = (e) => {
         e.preventDefault();
         fetchQuestions();
-        dispatch(setStartQuizzTimer(true));
-        navigate("/quizzquestions");
+        dispatch(setStartQuizTimer(true));
+        navigate("/quizquestions");
     }
 
     useEffect(() => {
@@ -55,16 +55,16 @@ const QuizzSettings = (props) => {
         return (
             <Box>
                 <div>
-                    <img src={logo} alt="quizz.jpg" style={{width:"50%", height:"70%"}}/>
+                    <img src={logo} alt="quiz.jpg" style={{width:"50%", height:"70%"}}/>
                 </div>
-                <SelectQuizzOption options={response.trivia_categories} label="Category" />
+                <SelectQuizOption options={response.trivia_categories} label="Category" />
                 <Box width="100%" mt={2} display="flex" justifyContent="space-between">
-                    <Button disabled={isStartBtnDisabled} size="large" variant="contained" width="50%" color="success" type="button" onClick={handleStartQuizzByTheCategory}>Get started</Button>
-                    <Button disabled={isStartRandomBtnDisabled} size="large" variant="contained" width="50%" color="error" type="button" onClick={handleStartRandomQuizz}>I'm lucky</Button>
+                    <Button disabled={isStartBtnDisabled} size="large" variant="contained" width="50%" color="success" type="button" onClick={handleStartQuizByTheCategory}>Get started</Button>
+                    <Button disabled={isStartRandomBtnDisabled} size="large" variant="contained" width="50%" color="error" type="button" onClick={handleStartRandomQuiz}>I'm lucky</Button>
                 </Box>
             </Box>
         )
     }
 }
 
-export default QuizzSettings
+export default QuizSettings

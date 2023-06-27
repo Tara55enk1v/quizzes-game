@@ -4,7 +4,7 @@ import Question from "../components/Question/Question";
 import Timer from "../components/Timer";
 
 
-const QuizzQuestions = (props) => {
+const QuizQuestions = (props) => {
   const { questions, score, setQuestions, setScore } = props;
   const [options, setOptions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -63,4 +63,4 @@ const QuizzQuestions = (props) => {
   );
 }
 
-export default QuizzQuestions
+export default QuizQuestions
